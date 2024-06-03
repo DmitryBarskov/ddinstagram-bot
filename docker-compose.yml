@@ -1,0 +1,9 @@
+services:
+  bot:
+    image: denoland/deno:alpine
+    env_file:
+      - .env
+    volumes:
+      - .:/bot
+    network_mode: host
+    command: deno run --allow-env --allow-net bot/bot.ts
